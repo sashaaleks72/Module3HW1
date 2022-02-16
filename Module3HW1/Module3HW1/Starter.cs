@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Module3HW1
 {
@@ -37,9 +38,9 @@ namespace Module3HW1
 
             Console.WriteLine($"List count: {ListToTest.Count}\nList capacity: {ListToTest.Capacity}");
 
-            for (int i = 0; i < ListToTest.Count; i++)
+            foreach (var item in ListToTest)
             {
-                Console.Write($"{ListToTest[i]} ");
+                Console.Write($"{item} ");
             }
 
             Console.WriteLine();

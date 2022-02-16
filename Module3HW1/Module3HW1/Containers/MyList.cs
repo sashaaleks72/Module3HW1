@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Module3HW1
 {
-    public class MyList<T> : IMyList<T>
+    public class MyList<T> : IMyList<T>, IReadOnlyCollection<T>
     {
         public MyList()
         {
@@ -43,7 +43,10 @@ namespace Module3HW1
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
-            return new MyListEnumerator<T>(ArrayOfValues);
+            for (int i = 0; i < Count; i++)
+            {
+                yield return ArrayOfValues[i];
+            }
         }
 
         public void Add(T value)
